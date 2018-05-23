@@ -1,0 +1,23 @@
+My hero name is {{hero}} and from {{country}}
+<br/>
+<ul>
+    <li *ngFor="let country of countryList">
+        {{country}}
+    </li>
+</ul>
+   <p *ngIf="herosList.length>20">
+        ok
+   </p>
+    <br/>
+<ul>
+    <li *ngFor="let hero of herosList">
+        {{hero.id}} -  {{hero.name}}
+    </li>
+</ul> 
+<br/>
+The sum of 10+1 = {{10+1}}
+<br/>
+<button disabled="{{flag}}">Delete hero</button>
+<br/>
+<h1>Propert binding</h1>
+<img [src]="image">
