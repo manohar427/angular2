@@ -20,7 +20,61 @@ The sum of 10+1 = {{10+1}}
 <button disabled="{{flag}}">Delete hero</button>
 <br/>
 <h1>Propert binding</h1>
-<img [src]="image">
+<img bind-src="image">
 <button [disabled]='isUnchanged'>OK</button>
 
 <div [ngClass]="classes">[ngClass] binding to the classes property</div>
+<br/>
+<h1>Content security</h1>
+<p><span>"{{evilTitle}}" is the <i>interpolated</i> evil title.</span></p>
+<p><span [innerHTML]="evilTitle"></span>" is the <i>property bound</i> evil title.</p>
+
+<table border=1>
+    <!--  expression calculates colspan=2 -->
+    <tr>
+        <td [attr.colspan]="1 + 1">One-Two</td>
+    </tr>
+  
+    <!-- ERROR: There is no `colspan` property to set!
+      <tr><td colspan="{{1 + 1}}">Three-Four</td></tr>
+    -->
+  
+    <tr>
+        <td>Five</td><td>Six</td>
+    </tr>
+  </table>
+
+  <div class="special"
+     [class.special]="!isSpecial">This one is not so special</div>
+
+
+     <button [style.color]="isUnchanged ? 'red': 'green'">Red</button>
+<button [style.background-color]="!isUnchanged ? 'cyan': 'yellow'" >Save</button>
+
+<button [disabled]='flag'>Try Me</button>
+
+<h1>Event Binding</h1>
+My Hero:{{hero}}<br/>
+Enter Hero Name:<input [value]="hero" (input)="hero=$event.target.value" (blur)="moveOut($event)"><br/>
+<input type="button"  (click)="myButton1($event)" value="Button-1"/><br/>
+<input type="button"  on-click="myButton2($event)" value="Button-2"/><br/>
+
+<h1>Two way binding</h1>
+<app-sizer [size]="fontSizePx" (x)="y=$event"></app-sizer>
+
+
+<div [style.font-size.px]="y">Resizable Text-From Parent Component </div>
+
+<h1>Example -1</h1>
+Username1:<input [(ngModel)]="username1">
+<p>UserName1:{{username1}}</p>
+
+
+Username2:<input (input)="username2=$event.target.value" [value]="username2">
+<p>UserName2:{{username2}}</p>
+
+
+
+<input [ngModel]="username3" (ngModelChange)="username3 = $event">
+
+<p>UserName3: {{username3}}!</p>

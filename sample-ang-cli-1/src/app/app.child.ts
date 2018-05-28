@@ -6,6 +6,7 @@ import { Component, Input } from '@angular/core';
     template: `
       <h3>{{abc}} says:</h3>
       <p>I, {{xyz123}}, am at your service.</p>
+      <input type="button"  on-click="myButton2($event)" value="Button-2"/><br/>
     `
   })
 export class MyChild{
