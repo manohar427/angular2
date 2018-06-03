@@ -8,11 +8,15 @@ import {AppComponentTB} from './app.appcomponent';
 import {AppTBChildComponent} from './app.appChildComponent';
 import {StructuralDirect} from './app.str.direct';
 import {Email} from './app.email';
+import {SwitchComponents} from './app.switch';
+import {Form1} from './app.forms';
+import {TemplateDrivForm} from './app.template.driven.form';
 
 @NgModule({
-  declarations: [AppComponent,MyChild,SizerComponent,AppComponentTB,AppTBChildComponent,StructuralDirect,Email],
+  declarations: [AppComponent,MyChild,SizerComponent,AppComponentTB,AppTBChildComponent,
+    StructuralDirect,Email,SwitchComponents,Form1,TemplateDrivForm],
   imports: [BrowserModule,FormsModule],
  // bootstrap: [AppComponent]
- bootstrap: [StructuralDirect]
+ bootstrap: [TemplateDrivForm]
 })
 export class AppModule { }
