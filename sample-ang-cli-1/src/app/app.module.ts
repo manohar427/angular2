@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MyChild } from './app.child';
 import { SizerComponent } from './app.sizer.component';
@@ -12,12 +13,13 @@ import { SwitchComponents } from './app.switch';
 import { Form1 } from './app.forms';
 import { TemplateDrivForm } from './app.template.driven.form';
 import { ReactForm } from './app.reactive.form';
+import { EmployeeList } from './app.employee.component';
 
 @NgModule({
   declarations: [AppComponent, MyChild, SizerComponent, AppComponentTB, AppTBChildComponent,
-    StructuralDirect, Email, SwitchComponents, Form1, TemplateDrivForm, ReactForm],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+    StructuralDirect, Email, SwitchComponents, Form1, TemplateDrivForm, ReactForm,EmployeeList],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule,HttpModule],
   // bootstrap: [AppComponent]
-  bootstrap: [ReactForm]
+  bootstrap: [EmployeeList]
 })
 export class AppModule { }
