@@ -12,8 +12,8 @@ export class ReactForm implements OnInit {
     ngOnInit() {
         this.contactInfo = new FormGroup(
             {
-                name: new FormControl(''),
-                contactno: new FormControl(''),
+                name: new FormControl('Manohar'),
+                contactno: new FormControl('99887744'),
             }
         );
     }
