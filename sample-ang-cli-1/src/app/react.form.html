@@ -1,5 +1,34 @@
-<form novalidate (ngSubmit)='submit(contactInfo)' [formGroup]='contactInfo'>
+<form (ngSubmit)='submit(contactInfo)' [formGroup]='contactInfo'>
     <input type="text" placeholder="name" formControlName='name'>
+
+    <div *ngIf="contactInfo.get('name').hasError('required') && contactInfo.get('name').touched">
+        Name is required
+    </div>
+
+    <div *ngIf="contactInfo.get('name').hasError('minlength') && contactInfo.get('name').touched">
+        Name is minimumn 2 chars
+    </div>
+
+    
+    <div *ngIf="contactInfo.get('name').hasError('maxlength') && contactInfo.get('name').touched">
+            Name is maximumn 4 chars
+        </div>
+
     <input type="text" placeholder="Contact No" formControlName='contactno'>
-    <button type="submit">Submit</button>
+
+    <div *ngIf="contactInfo.get('contactno').hasError('required') && contactInfo.get('contactno').touched">
+        Phone no is required
+    </div>
+
+    <div *ngIf="contactInfo.get('contactno').hasError('minlength') && contactInfo.get('contactno').touched">
+        Phone no is minimumn 3 chars
+    </div>
+
+    <div *ngIf="contactInfo.get('contactno').hasError('maxlength') && contactInfo.get('contactno').touched">
+            Phone no is Max 5 chars
+        </div>
+
+    <button type="submit" [disabled]='!contactInfo.valid'>Submit</button>
+    <br/>
+    Form data:{{contactInfo.value|json}}
 </form>

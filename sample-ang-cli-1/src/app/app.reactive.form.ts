@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Contacts } from './contact.interface';
 
 
@@ -18,8 +18,8 @@ export class ReactForm implements OnInit {
           );*/
         this.contactInfo = this.fb.group(
             {
-                name: [''],
-                contactno: []
+                name: ['',[Validators.required,Validators.minLength(2),Validators.maxLength(4)]],
+                contactno: ['',[Validators.required,Validators.minLength(3),Validators.maxLength(5)]]
             }
         );
     }
