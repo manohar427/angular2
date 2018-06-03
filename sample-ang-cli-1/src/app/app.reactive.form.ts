@@ -16,8 +16,6 @@ export class ReactForm implements OnInit {
                 contactno: new FormControl(''),
             }
         );
-
-
     }
 
     submit({ value, valid }: { value: Contacts, valid: boolean }) {
