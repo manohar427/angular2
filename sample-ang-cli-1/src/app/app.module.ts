@@ -27,7 +27,7 @@ import { NotFound } from './app.route.not-found';
 const appRoutes: Routes = [
   { path: 'employee', component: Employee },
   { path: 'department', component: Department },
-  { path: '', component: Employee },
+  { path: '', redirectTo: 'employee', pathMatch: 'full' },
   { path: '**', component: NotFound }];
 
 
