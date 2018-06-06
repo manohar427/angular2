@@ -20,13 +20,14 @@ import { RoutingApp } from './app.routing';
 import { Employee } from './app.route.employee';
 import { Department } from './app.route.department';
 import { NotFound } from './app.route.not-found';
-
+import { EmployeeInfo } from './app.route.employee-info';
 
 
 
 const appRoutes: Routes = [
   { path: 'employee', component: Employee },
   { path: 'department', component: Department },
+  { path: 'employee-info/:id/:name', component: EmployeeInfo },
   { path: '', redirectTo: 'employee', pathMatch: 'full' },
   { path: '**', component: NotFound }];
 
@@ -34,8 +35,8 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, MyChild, SizerComponent, AppComponentTB, AppTBChildComponent,
-    StructuralDirect, Email, SwitchComponents, Form1, TemplateDrivForm, ReactForm, EmployeeList, RoutingApp, Employee, Department, NotFound],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, RouterModule.forRoot(appRoutes, { enableTracing: true })],
+    StructuralDirect, Email, SwitchComponents, Form1, TemplateDrivForm, ReactForm, EmployeeList, RoutingApp, Employee, Department, NotFound,EmployeeInfo],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, RouterModule.forRoot(appRoutes, { enableTracing: false })],
   // bootstrap: [AppComponent]
   bootstrap: [RoutingApp]
 })
