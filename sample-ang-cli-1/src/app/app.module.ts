@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { MyChild } from './app.child';
 import { SizerComponent } from './app.sizer.component';
@@ -15,11 +16,27 @@ import { TemplateDrivForm } from './app.template.driven.form';
 import { ReactForm } from './app.reactive.form';
 import { EmployeeList } from './app.employee.component';
 
+import { RoutingApp } from './app.routing';
+import { Employee } from './app.route.employee';
+import { Department } from './app.route.department';
+import { NotFound } from './app.route.not-found';
+
+
+
+
+const appRoutes: Routes = [
+  { path: 'employee', component: Employee },
+  { path: 'department', component: Department },
+  { path: '', component: Employee },
+  { path: '**', component: NotFound }];
+
+
+
 @NgModule({
   declarations: [AppComponent, MyChild, SizerComponent, AppComponentTB, AppTBChildComponent,
-    StructuralDirect, Email, SwitchComponents, Form1, TemplateDrivForm, ReactForm,EmployeeList],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule,HttpModule],
+    StructuralDirect, Email, SwitchComponents, Form1, TemplateDrivForm, ReactForm, EmployeeList, RoutingApp, Employee, Department, NotFound],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, RouterModule.forRoot(appRoutes, { enableTracing: true })],
   // bootstrap: [AppComponent]
-  bootstrap: [EmployeeList]
+  bootstrap: [RoutingApp]
 })
 export class AppModule { }
