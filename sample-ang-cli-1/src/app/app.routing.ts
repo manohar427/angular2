@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-root',
-    template: `
+  selector: 'app-root',
+  template: `
       <h3>Application Name</h3>
       <nav>           
       <a routerLink="employee" routerLinkActive="active">Employee List</a> 
@@ -10,10 +10,7 @@ import { Component, OnInit } from '@angular/core';
       </nav>
       <router-outlet></router-outlet>
     `,
-    styles:['nav a.active{color:red} nav a{padding: 5px 15px;background-color:blue;border-radius:4px;text-decoration:none;}']
+  styles: ['nav a.active{color:red} nav a{padding: 5px 15px;background-color:blue;border-radius:4px;text-decoration:none;}']
 })
 export class RoutingApp {
-    //<a [routerLink]="['/users', username]">{{ username }} Profile</a>
-    //<a routerLink="department" routerLinkActive="active">Department</a>
-    username:string = "Manohar"
 }
