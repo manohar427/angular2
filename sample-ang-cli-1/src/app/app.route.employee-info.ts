@@ -14,9 +14,12 @@ export class EmployeeInfo{
     name;
     ngOnInit() {
         // subscribe to the parameters observable
-        this.route.paramMap.subscribe(params => {
+      /*  this.route.paramMap.subscribe(params => {
          this.empId=params.get('id');
          this.name=params.get('name');
-        });
+        });*/
+        this.empId= this.route.snapshot.params['id'];
+        this.name= this.route.snapshot.params['name'];
+
       }
 }
