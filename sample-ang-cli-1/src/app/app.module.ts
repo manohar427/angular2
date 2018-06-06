@@ -38,6 +38,6 @@ const appRoutes: Routes = [
     StructuralDirect, Email, SwitchComponents, Form1, TemplateDrivForm, ReactForm, EmployeeList, RoutingApp, Employee, Department, NotFound,EmployeeInfo,IfElseApp],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, RouterModule.forRoot(appRoutes, { enableTracing: false })],
   // bootstrap: [AppComponent]
-  bootstrap: [IfElseApp]
+  bootstrap: [EmployeeList]
 })
 export class AppModule { }
