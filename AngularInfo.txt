@@ -1,7 +1,7 @@
 Angular JS and Angular 2:-
 -------------------------
 1.Angular 2 is major upgrade.
-2.Angular 2 is component based and re use of code and testing is       easy.
+2.Angular 2 is component based and re use of code and testing is easy.
 3.Angular 2 is 5 times faster than Angularjs.
 4.Angular 2 supports mobile devices.
-5.Angular 2 supports more languages like     JavaScript,Typescript,Dart,PureScript.
+5.Angular 2 supports more languages like JavaScript,Typescript,Dart,PureScript.
