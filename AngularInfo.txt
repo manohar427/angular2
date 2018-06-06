@@ -5,3 +5,11 @@ Angular JS and Angular 2:-
 3.Angular 2 is 5 times faster than Angularjs.
 4.Angular 2 supports mobile devices.
 5.Angular 2 supports more languages like JavaScript,Typescript,Dart,PureScript.
+
+
+Angular2 and Angular 4 Differences:-
+====================================
+1.Size of production ready code is reduced of 100KB.
+2.Angular 4 supports Typescript 2.1 and 2.4 supports (Angular 2 supports only 1.8).
+3.Animation features are pulled out from @angular/core package.
+4.ifelse syntax got introduced in Angular4 .

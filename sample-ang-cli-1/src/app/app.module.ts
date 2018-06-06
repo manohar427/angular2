@@ -21,7 +21,7 @@ import { Employee } from './app.route.employee';
 import { Department } from './app.route.department';
 import { NotFound } from './app.route.not-found';
 import { EmployeeInfo } from './app.route.employee-info';
-
+import {IfElseApp} from './app.ifelse';
 
 
 const appRoutes: Routes = [
@@ -35,9 +35,9 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, MyChild, SizerComponent, AppComponentTB, AppTBChildComponent,
-    StructuralDirect, Email, SwitchComponents, Form1, TemplateDrivForm, ReactForm, EmployeeList, RoutingApp, Employee, Department, NotFound,EmployeeInfo],
+    StructuralDirect, Email, SwitchComponents, Form1, TemplateDrivForm, ReactForm, EmployeeList, RoutingApp, Employee, Department, NotFound,EmployeeInfo,IfElseApp],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, RouterModule.forRoot(appRoutes, { enableTracing: false })],
   // bootstrap: [AppComponent]
-  bootstrap: [RoutingApp]
+  bootstrap: [IfElseApp]
 })
 export class AppModule { }
